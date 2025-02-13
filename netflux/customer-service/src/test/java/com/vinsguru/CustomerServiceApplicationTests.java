@@ -12,19 +12,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.RequestEntity;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.web.client.RestClient;
 
 import java.net.URI;
 import java.util.List;
 
 @Import(TestContainersConfiguration.class)
-@MockBean({RestClient.class, MovieClient.class})
+@MockitoBean(types = {RestClient.class, MovieClient.class})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CustomerServiceApplicationTests {
 
