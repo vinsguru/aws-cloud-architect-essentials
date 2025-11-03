@@ -1,12 +1,12 @@
 services:
   postgres:
-    image: postgres
+    image: postgres:18
     container_name: postgres
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
