@@ -12,7 +12,7 @@ class TestContainersConfiguration {
 	@Bean
 	@ServiceConnection
 	PostgreSQLContainer<?> postgresContainer() {
-		var dockerImage = DockerImageName.parse("public.ecr.aws/docker/library/postgres:latest").asCompatibleSubstituteFor("postgres");
+		var dockerImage = DockerImageName.parse("public.ecr.aws/docker/library/postgres:18").asCompatibleSubstituteFor("postgres");
 		return new PostgreSQLContainer<>(dockerImage)
 				.withDatabaseName("customer")
 				.withInitScript("init-db.sql");
