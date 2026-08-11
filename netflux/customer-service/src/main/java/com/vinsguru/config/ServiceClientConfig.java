@@ -13,11 +13,10 @@ public class ServiceClientConfig {
     private static final Logger log = LoggerFactory.getLogger(ServiceClientConfig.class);
 
     @Bean
-    public RestClient restClient(@Value("${movie.service.url}") String baseUrl) {
+    public RestClient restClient(RestClient.Builder builder, @Value("${movie.service.url}") String baseUrl) {
         log.info("movie service url: {}", baseUrl);
-        return RestClient.builder()
-                         .baseUrl(baseUrl)
-                         .build();
+        return builder.baseUrl(baseUrl)
+                      .build();
     }
 
 }
