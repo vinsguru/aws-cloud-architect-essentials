@@ -3,8 +3,6 @@ package com.vinsguru.controller;
 import com.vinsguru.domain.Genre;
 import com.vinsguru.dto.MovieDto;
 import com.vinsguru.service.MovieService;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
